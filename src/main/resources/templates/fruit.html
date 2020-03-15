@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div th:include="partials/header.html :: my-partial">-->
+<!--    partial content goes here...-->
+<!--</div>-->
+<h1>Fruit Basket</h1>
+<ul>
+    <li th:each="fruit : ${fruitBasket}">
+        <p th:text="${fruit}"/>
+        <p th:if='${fruit.equals("kiwi")}'>This is my favorite fruit</p>
+    </li>
+    <!---to check your work /fruit in local host---->
+</ul>
+</body>
+</html>

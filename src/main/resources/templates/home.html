@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
-</head>
+<head th:include="/partials/header.html :: header"></head>
+
 <body>
 
+<nav th:include="partials/navbar.html :: navbar"></nav>
 <h1>This is the home page</h1>
 
+<form action="/home" method="post">
+    <label for="cohort-ip"></label><input type="text" name="cohort" id="cohort-ip" class="field" />
+    <button>Join now</button>
+</form>
 </body>
 </html>

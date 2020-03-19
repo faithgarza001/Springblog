@@ -21,7 +21,7 @@ public class AdController {
     public List<Ad> getAllAds() {
         return adDao.findAll();
     }
-}
+
 
 //    @GetMapping("/ads/save")
 //    @ResponseBody
@@ -41,4 +41,5 @@ public class AdController {
 //        adDao.save(ad);
 //        return "Updating ad";
 //    }
+}
 

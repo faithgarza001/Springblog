@@ -2,9 +2,12 @@ package com.codeup.springblog.controllers;
 
 import com.codeup.springblog.models.Post;
 import com.codeup.springblog.repositories.PostRepo;
+import org.hibernate.service.spi.InjectService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.model.IModel;
 
 @Controller
 public class PostController {
@@ -46,10 +49,25 @@ public class PostController {
     }
 
     @PostMapping("/posts/{id}/delete")//this is a method to refer to your delete button
-    @ResponseBody
     public String delete(@PathVariable long id){
        //delete post
         postDao.deleteById(id);
+        return "redirect:/posts";
+    }
+
+    @GetMapping("/posts/{id}/edit")//end point to view the form
+    public String editForm(@PathVariable long id, Model model){
+        Post postToEdit = postDao.getOne(id);//getting post from data base
+        model.addAttribute("post", postToEdit);//set post to the view
+        return "posts/edit";
+    }
+
+    @PostMapping("/posts/{id}/edit")
+    public String updatePost(@PathVariable long id, @RequestParam String title,  @RequestParam String body) {
+      Post p = postDao.getOne(id);
+       p.setTitle(title);
+       p.setBody(body);
+       postDao.save(p);
         return "redirect:/posts";
     }
 }

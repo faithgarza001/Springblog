@@ -10,8 +10,8 @@ insert into posts (title, body, id) values
 ('Post 1', 'This is the test post 1 body.', 1),
 ('Post 2', 'This is the test post 2 body.', 2),
 ('Post 3', 'This is the test post 3 body.', 3),
-('Post 4', 'This is the test post 4 body.', 4),
-('Post 5', 'This is the test post 5 body.', 5);
+('Post 4', 'This is the test post 4 body.', 4)
+# ('Post 6', 'This is the test post 5 body.', 6);
 
 
 # insert into posts (title, id, body) values ('Vehicle', 'jalopy');

@@ -2,9 +2,9 @@ USE europa_blog_db;
 #
 # # seed users
   insert into users (email, password, username) values ('user1','user1@gmail.com', 'letmein1');
-  insert into users (email, password, username) values ('user2','user1@gmail.com', 'letmein2');
-  insert into users (email, password, username) values ('user3','user1@gmail.com', 'letmein3');
-  insert into users (email, password, username) values ('user4','user1@gmail.com', 'letmein4');
+  insert into users (email, password, username) values ('user2','user2@gmail.com', 'letmein2');
+  insert into users (email, password, username) values ('user3','user3@gmail.com', 'letmein3');
+  insert into users (email, password, username) values ('user4','user4@gmail.com', 'letmein4');
 # ('bob@email.com', 'letmein', 'bob123');
 #
 #

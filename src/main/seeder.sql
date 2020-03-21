@@ -1,16 +1,21 @@
 USE europa_blog_db;
 #
 # # seed users
-# insert into users (email, password, username) values
+  insert into users (email, password, username) values ('user1','user1@gmail.com', 'letmein1');
+  insert into users (email, password, username) values ('user2','user1@gmail.com', 'letmein2');
+  insert into users (email, password, username) values ('user3','user1@gmail.com', 'letmein3');
+  insert into users (email, password, username) values ('user4','user1@gmail.com', 'letmein4');
 # ('bob@email.com', 'letmein', 'bob123');
 #
 #
 # # seed posts
-insert into posts (title, body, id) values
-('Post 1', 'This is the test post 1 body.', 1),
-('Post 2', 'This is the test post 2 body.', 2),
-('Post 3', 'This is the test post 3 body.', 3),
-('Post 4', 'This is the test post 4 body.', 4)
+insert into posts (title, body, user_id) values ('Test Post Title 1', 'This is the body for test post 1', 1);
+insert into posts (title, body, user_id) values ('Test Post Title 2', 'This is the body for test post 2', 2);
+insert into posts (title, body, user_id) values ('Test Post Title 3', 'This is the body for test post 3', 3);
+insert into posts (title, body, user_id) values ('Test Post Title 4', 'This is the body for test post 4', 4);
+insert into posts (title, body, user_id) values ('Test Post Title 5', 'This is the body for test post 5', 1);
+
+
 # ('Post 6', 'This is the test post 5 body.', 6);
 
 

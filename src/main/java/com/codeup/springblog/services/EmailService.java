@@ -15,7 +15,7 @@ public class EmailService {
     @Autowired
     public JavaMailSender emailSender;
 
-    @Value("${spring.mail.from}")
+    @Value("${spring.mail.from}")//this comes from application properties and @value is how use of those properties are made
     private String from;
 
     public void prepareAndSend(Post post, String subject, String body) {

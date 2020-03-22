@@ -2,7 +2,7 @@ package com.codeup.springblog.models;
 
 import javax.persistence.*;
 
-@Entity
+@Entity//Entities in JPA are nothing but POJOs representing data that can be persisted to the database. An entity represents a table stored in a database. Every instance of an entity represents a row in the table.
 @Table(name="ads")
 public class Ad {
     /* More code here... */

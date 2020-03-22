@@ -1,13 +1,13 @@
 package com.codeup.springblog.models;
 
 import javax.persistence.*;
-@Entity
-@Table(name="posts")
+@Entity//Entities in JPA are nothing but POJOs representing data that can be persisted to the database. An entity represents a table stored in a database. Every instance of an entity represents a row in the table.
+@Table(name="posts")//we can specify the table name using the @Table annotation.
 public class Post {
 
-    @Id
+    @Id//Each JPA entity must have a primary key which uniquely identifies it. The @Id annotation defines the primary key.
     @GeneratedValue(strategy = GenerationType.IDENTITY)//this is the equal to auto increment
-    private long id;
+    private long id;//creating private id object.
 
     @Column(nullable = false)
     private String title;

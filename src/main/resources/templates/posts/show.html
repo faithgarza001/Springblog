@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/extras/spring-security" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Viewing Post</title>
@@ -9,11 +9,21 @@
 <p th:text="${post.body}"></p>
 <a th:href="'mailto:'+${post.user.email}"><span th:text="${post.user.email}"></span></a>
 <br>
-<div sec:authorize="isAuthenticated()"></div>
+<div sec:authorize="isAuthenticated()">
+    <div th:if="user.id=post.user.id">
+    <a th:href="@{|/posts/${post.id}/edit|}"><button>Edit Post</button></a>
+</div>
+</div>
+<!--<div sec:authorize="isAuthenticated()">-->
 
-<div th:if="${userName == post.user.username}">
-    <a th:href="@{|/posts/${post.id}/edit|}"><button>Edit Post</button></button></a>
-</div>
-</div>
+<!--    User ID: <span th:text="${#authentication.principal.id}"/>-->
+<!--    Username: <span th:text="${#authentication.principal.username}"/>-->
+<!--    Email: <span th:text="${#authentication.principal.email}"/>-->
+<!--</div>-->
+
+<!--<div th:if="${userName == post.user.username}">-->
+<!--    <a th:href="@{|/posts/${post.id}/edit|}"><button>Edit Post</button></button></a>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 </html>

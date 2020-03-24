@@ -53,12 +53,7 @@ public class PostController {
 
     @GetMapping("/posts/create")//	view the form for creating a post
     public String getCreatePostForm(Model model){
-        User loggedIn = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if(loggedIn != null)
-        //        model.addAttribute("post", new Post());
-            return "posts/create";
-        else
-            return "redirect:/posts";
+        return "posts/create";
     }
 
     @PostMapping("/posts/create")//create a new post

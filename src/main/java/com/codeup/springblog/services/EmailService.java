@@ -9,7 +9,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 
-@Service
+@Service("mailService")
 public class EmailService {
 
     @Autowired
@@ -18,7 +18,7 @@ public class EmailService {
     @Value("${spring.mail.from}")//this comes from application properties and @value is how use of those properties are made
     private String from;
 
-    public void prepareAndSend(Post post, String subject, String body) {
+    public void prepareAndSend(Post post, String subject, String body) {//prepare and send email based on post with subject line and a body
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setFrom(from);
         msg.setTo(post.getUser().getEmail());

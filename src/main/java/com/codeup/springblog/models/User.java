@@ -3,10 +3,20 @@ package com.codeup.springblog.models;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity//Entities in JPA are nothing but POJOs representing data that can be persisted to the database. An entity represents a table stored in a database. Every instance of an entity represents a row in the table.
-@Table(name = "users")//we can specify the table name using the @Table annotation.
-public class User {
+//Entities in JPA are nothing but POJOs representing data that can be persisted to the database. An entity represents a table stored in a database. Every instance of an entity represents a row in the table.
+//we can specify the table name using the @Table annotation.
 
+    @Entity
+    @Table(name = "users")
+    public class User {
+
+
+        public User(User copy) {
+            id = copy.id; // This line is SUPER important! Many things won't work if it's absent
+            email = copy.email;
+            username = copy.username;
+            password = copy.password;
+        }
     @Id//Each JPA entity must have a primary key which uniquely identifies it. The @Id annotation defines the primary key.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

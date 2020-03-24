@@ -8,9 +8,13 @@
 <h1>Create Post</h1>
 <form th:action="@{|/posts/create|}" th:method="POST" th:object="${post}">
     <label for="title">Title</label>
-    <input type="text" th:field="*{title}" placeholder="Enter title">
+    <label>
+        <input type="text" th:field="*{title}" placeholder="Enter title"/>
+    </label>
     <label for="body">Body</label>
-    <textarea  th:field="*{body}" placeholder="Enter body"></textarea>
+    <label>
+        <textarea  th:field="*{body}" placeholder="Enter body"></textarea>
+    </label>
     <button>Save Post</button>
 </form>
 </body>

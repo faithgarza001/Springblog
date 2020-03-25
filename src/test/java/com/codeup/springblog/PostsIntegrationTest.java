@@ -71,19 +71,19 @@ public class PostsIntegrationTest {
     }
 
     @Test
-    public void contextLoads() {
+    public void contextLoads() {//this test has been tested and passed.
 //        System.out.println("Inside smoke test!!!!!!!");
         // Sanity Test, just to make sure the MVC bean is working
         assertNotNull(mvc);
     }
 
-    @Test
+    @Test//this test has been tested and passed.
     public void testIfUserSessionIsActive() throws Exception {
         // It makes sure the returned session is not null
         assertNotNull(httpSession);
     }
 
-    @Test
+    @Test//this test has been tested and passed
     public void testCreatePost() throws Exception {
         // Makes a Post request to /posts/create and expect a redirection to the posts index
         this.mvc.perform(
@@ -96,7 +96,7 @@ public class PostsIntegrationTest {
         System.out.println("Create seems fine");
     }
 
-    @Test
+    @Test//this test has been tested and passed.
     public void testShowPost() throws Exception {
 
         Post existingPost = postDao.findAll().get(0);
@@ -108,8 +108,8 @@ public class PostsIntegrationTest {
                 .andExpect(content().string(containsString(existingPost.getBody())));
     }
 
-    @Test
-    public void testAdsIndex() throws Exception {
+    @Test//this test did not pass and need work
+    public void testPostIndex() throws Exception {
         Post existingPost = postDao.findAll().get(0);
 
         // Makes a Get request to /ads and verifies that we get some of the static text of the ads/index.html template and at least the title from the first Ad is present in the template.
@@ -121,7 +121,7 @@ public class PostsIntegrationTest {
                 .andExpect(content().string(containsString(existingPost.getTitle())));
     }
 
-    @Test
+    @Test//this test has been tested and passed.
     public void testEditPost() throws Exception {
         // Gets the first Post for tests purposes
         Post existingPost = postDao.findAll().get(0);
